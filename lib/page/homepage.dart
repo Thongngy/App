@@ -8,28 +8,26 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body:Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-           Expanded(
-          child: Container(
-            color: Colors.pink,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.red,
-          ),
-        ),
-          Expanded(
-          child: Container(
-            color: Colors.grey,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.grey,
-          ),
-        ),
-      ],
+          Expanded(child: 
+           Container( 
+            width: 100,
+              color: Colors.pink,
+            ),
+            ),
+          Container(
+              
+              width: 100,
+                color: Colors.pink[300],
+                ),
+          
+          Container(
+              width: 100,
+                color: Colors.pink[200],
+                ),   
+        ],
       ),
     );
   }
