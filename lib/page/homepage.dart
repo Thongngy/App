@@ -24,9 +24,13 @@ class HomePage extends StatelessWidget {
             color: Colors.grey,
           ),
         ),
+        Expanded(
+          child: Container(
+            color: Colors.grey,
+          ),
+        ),
       ],
       ),
     );
-    
   }
 }
