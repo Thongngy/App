@@ -1,33 +1,58 @@
+
 import 'package:flutter/material.dart';
+import 'package:weather/page/firsh_page.dart';
+import 'package:weather/page/second_page.dart'; // Ensure the correct import path and class name.
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Expanded(child: 
-           Container( 
-            width: 100,
-              color: Colors.pink,
-            ),
-            ),
-          Container(
-              
-              width: 100,
-                color: Colors.pink[300],
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(7, 71, 153, 50),
+        title: const Text('A B A'),
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: const Color.fromRGBO(7, 71, 153, 100),
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                child: Center(
+                  child: Text(
+                    'LOGO',
+                    style: TextStyle(fontSize: 30),
+                  ),
                 ),
-          
-          Container(
-              width: 100,
-                color: Colors.pink[200],
-                ),   
-        ],
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text(
+                  'Page 1',
+                  style: TextStyle(fontSize: 30),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => FrishPage()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text(
+                  'Page 2',
+                  style: TextStyle(fontSize: 30),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => SecondPage()),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
