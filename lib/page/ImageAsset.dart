@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:weather/page/homepage.dart';
+
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
 //   //Comment Ctrl + //)
@@ -7,9 +7,10 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Colors.red,
-//       ),
+//       body: Center(
+//         // child: Image.asset('lib/image/Image01.jpg',)
+       
+//         ),
 //     );
 //   }
 // }
