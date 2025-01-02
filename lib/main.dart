@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:weather/page/homepage.dart';
+import 'page/intro_page.dart'; // Replace 'your_app' with your app's package name
+import 'page/menu_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      home: const IntroPage(),
+      routes: {
+        '/intropage': (context) => const IntroPage(),
+        '/menupage': (context) => const MenuPage(),
+      },
     );
   }
 }
+
+
+
