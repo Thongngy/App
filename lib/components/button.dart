@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/theme/colors.dart';
 
 class MyButton extends StatelessWidget {
   final String text;
@@ -16,7 +17,8 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: BoxDecoration(color:Color.fromARGB(255, 244, 127, 118),
+        decoration: BoxDecoration(
+          color: secondaryColor,
         borderRadius: BorderRadius.circular(40),
         ),
         padding: EdgeInsets.all(20),
