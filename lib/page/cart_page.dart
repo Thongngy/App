@@ -18,76 +18,115 @@ class CartPage extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Consumer<Shop>(builder: (context, value, child)=>Scaffold(
+Widget build(BuildContext context) {
+  return Consumer<Shop>(
+    builder: (context, value, child) => Scaffold(
       backgroundColor: primaryColor,
-       appBar: AppBar(
+      appBar: AppBar(
         title: const Text("My Cart"),
-         centerTitle: true,
+        centerTitle: true,
         backgroundColor: primaryColor,
         elevation: 0,
         foregroundColor: Colors.black,
       ),
       body: Column(
         children: [
-          //customer cart 
+          // Customer cart
           Expanded(
-            child: ListView.builder(
-              itemCount: value.cart.length,
-              itemBuilder: (context, index){
-                //get food from cart
-                final Food food = value.cart[index];
-                //get food name
-                final String foodName = food.name;
-                //get food price
-                final String foodPrice = food.price;
-            
-                //return list lite
-                return Container(
-                  
-                  decoration: BoxDecoration(color: secondaryColor, borderRadius: BorderRadius.circular(80)),
-                  margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
-                  child: ListTile(
-                    title: Text(
-                      foodName, 
-                      style: const TextStyle(color: Colors.white, 
-                      fontWeight: FontWeight.bold,
-                      ),
-                      ),
-                    subtitle: Text(foodPrice,
-                    style: TextStyle(
-                      color: Colors.grey[200],
+            child: value.cart.isEmpty
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 80,
+                          color: Colors.grey.shade400,
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
+                          'Your cart is empty!',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.grey.shade600,
+                          ),
+                        ),
+                      ],
                     ),
-                    ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete,
-                      color: Colors.grey[300],
-                      ),
-                    onPressed: () => removeFromCart(food, context),
-                    ),
+                  )
+                : ListView.builder(
+                    itemCount: value.cart.length,
+                    itemBuilder: (context, index) {
+                      // Get food from cart
+                      final Food food = value.cart[index];
+                      // Return list item
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: secondaryColor,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        margin:
+                            const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        child: ListTile(
+                          title: Text(
+                            food.name,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            '\$${food.price}',
+                            style: TextStyle(
+                              color: Colors.grey[200],
+                            ),
+                          ),
+                          trailing: IconButton(
+                            icon: Icon(
+                              Icons.delete,
+                              color: Colors.grey[300],
+                            ),
+                            onPressed: () => removeFromCart(food, context),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-              ),
           ),
-            //Pay button
-
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: MyButton(text: 
-              "Pay Now", 
-              onTap: (){},
-              ),
-            )
+          // Total Price and Pay Button
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Total Price
+                Text(
+                  'Total: \$${value.totalPrice.toStringAsFixed(2)}',
+                  textAlign: TextAlign.right,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                // Pay Button
+                MyButton(
+                  text: "Pay Now",
+                  onTap: () {
+                    // Implement payment logic
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     ),
-    );
-    
-  }
+  );
 }
 
-
+}
 
 
 

@@ -30,4 +30,9 @@ class Shop extends ChangeNotifier{
   }
 
   void clearCart() {}
+
+  
+  double get totalPrice {
+  return cart.fold(0.0, (sum, food) => sum + double.parse(food.price));
+}
 }

@@ -3,5 +3,6 @@
         "cartpage",
         "intropage",
         "menupage"
-    ]
+    ],
+    "cmake.sourceDirectory": "D:/Learn Flutter/weather/linux"
 }

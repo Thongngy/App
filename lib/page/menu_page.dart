@@ -159,39 +159,83 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   Widget _buildPopularFood() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(20),
-      ),
-      margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
-      padding: const EdgeInsets.all(20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SingleChildScrollView(
+        child: Column(
         children: [
-          Row(
-            children: [
-              Image.asset('lib/image/sushi2.png', height: 60),
-              const SizedBox(width: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Salmon Eggs",
-                    style: GoogleFonts.dmSerifDisplay(fontSize: 18),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    '\$21.00',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ],
-              ),
-            ],
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset('lib/image/sushi2.png', height: 60),
+                    const SizedBox(width: 20),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Salmon Eggs",
+                          style: GoogleFonts.dmSerifDisplay(fontSize: 18),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          '\$21.00',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const Icon(Icons.favorite_outline, color: Colors.grey),
+              ],
+            ),
           ),
-          const Icon(Icons.favorite_outline, color: Colors.grey),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset('lib/image/sushi2.png', height: 60),
+                    const SizedBox(width: 20),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Salmon Eggs",
+                          style: GoogleFonts.dmSerifDisplay(fontSize: 18),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          '\$21.00',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const Icon(Icons.favorite_outline, color: Colors.grey),
+              ],
+            ),
+          ),
+          
         ],
       ),
+    ),
     );
   }
 }
