@@ -62,8 +62,9 @@ void incrementQuantity(){
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pop();  
               },
+
               child: const Text("OK"),
             ),
           ],
@@ -206,7 +207,9 @@ void incrementQuantity(){
             ),
             const SizedBox(height: 25),
             //add to cart button
-            MyButton(text: "Add To Cart", onTap: addToCart),
+            MyButton(text: "Add To Cart", 
+            onTap: addToCart,
+            ),
           ],
           ),
         ),

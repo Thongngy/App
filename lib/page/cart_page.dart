@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/components/button.dart';
+import 'package:weather/page/payment_page.dart';
 import 'package:weather/theme/colors.dart';
 
 import '../models/food.dart';
@@ -114,7 +115,10 @@ Widget build(BuildContext context) {
                 MyButton(
                   text: "Pay Now",
                   onTap: () {
-                    // Implement payment logic
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PaymentPage()),
+                    );
                   },
                 ),
               ],
@@ -125,112 +129,4 @@ Widget build(BuildContext context) {
     ),
   );
 }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:flutter/material.dart';
-
-// class CartPage extends StatelessWidget {
-//   const CartPage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text("My Cart"),
-//         centerTitle: true, // Center the title
-//         backgroundColor: Colors.transparent,
-//         elevation: 0,
-//         foregroundColor: Colors.black,
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Icon(
-//               Icons.shopping_cart_outlined,
-//               size: 80,
-//               color: Colors.grey.shade400,
-//             ),
-//             const SizedBox(height: 20),
-//             Text(
-//               'Your cart is empty!',
-//               style: TextStyle(
-//                 fontSize: 18,
-//                 color: Colors.grey.shade600,
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
